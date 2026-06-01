@@ -1,23 +1,38 @@
 import ImageViewer from '../ImageViewer/ImageViewer'
+import minus from "../../assets/icon-minus.svg"
+import plus from "../../assets/icon-plus.svg"
+
 
 const Product = () => {
     return (
         <section>
             <ImageViewer />
             <div>
-                Sneaker Company
+                <h3>Sneaker Company</h3>
 
-                Fall Limited Edition Sneakers
+                <h1>Fall Limited Edition Sneakers</h1>
+                <p>
+                    These low-profile sneakers are your perfect casual wear companion. Featuring a
+                    durable rubber outer sole, they’ll withstand everything the weather can offer.
+                </p>
 
-                These low-profile sneakers are your perfect casual wear companion. Featuring a
-                durable rubber outer sole, they’ll withstand everything the weather can offer.
+                <div className="price">
+                    <strong> $125.00</strong>
+                    <span className='discount'>50%</span>
+                </div>
+                <strong className="oldPrice">$250.00</strong>
 
-                $125.00
-                50%
-                $250.00
 
-                0
-                Add to cart
+                <div className="buySection">
+                    <div className="quantity">
+                        <button><img src={minus} alt="minus" /></button>
+                        <strong>0</strong>
+                        <button><img src={plus} alt="plus" /></button>
+
+                    </div>
+
+                    <button>Add to cart</button>
+                </div>
             </div>
         </section>
     )
