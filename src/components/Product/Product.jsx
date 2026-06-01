@@ -1,9 +1,17 @@
 import ImageViewer from '../ImageViewer/ImageViewer'
 import minus from "../../assets/icon-minus.svg"
 import plus from "../../assets/icon-plus.svg"
+import { useContext } from 'react'
+import { CartContext } from '../../App'
 
 
 const Product = () => {
+    const ctx = useContext(CartContext)
+
+    const addToCart = () => {
+        ctx.setCart(prev => [...prev, {name: "Fall Limited Edition Sneakers", price: 125}])
+    }
+
     return (
         <section>
             <ImageViewer />
@@ -24,14 +32,13 @@ const Product = () => {
 
 
                 <div className="buySection">
-                    <div className="quantity">
+                    {/* <div className="quantity">
                         <button><img src={minus} alt="minus" /></button>
                         <strong>0</strong>
                         <button><img src={plus} alt="plus" /></button>
+                    </div> */}
 
-                    </div>
-
-                    <button>Add to cart</button>
+                    <button onClick={addToCart}>Add to cart</button>
                 </div>
             </div>
         </section>
