@@ -81,3 +81,70 @@ nav{
   gap: 20px;
   padding: 10px;
 }
+
+section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.price strong{
+  font-size: 1.5rem;
+}
+
+.price{
+  display: flex;
+  gap:10px;
+  margin-top: 10px;
+}
+
+.discount{
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.oldPrice{
+  color: gray;
+  text-decoration: line-through;
+}
+
+main{
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+}
+
+section div:nth-child(2){
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  button{
+    background: var(--color-orange);
+    color: black;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 5px;
+    font-weight: bold;
+    transition: background 1s;
+  }
+
+  button:hover{
+    background: var(--color-pale-orange);
+  }
+}
+
+section div:nth-child(1){
+  background-image: url("../public/images/image-product-1.jpg");
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+h1{
+  margin-bottom: 10px;
+}

@@ -6,7 +6,7 @@ const ImageViewer = () => {
         "image-product-4.jpg"
     ]
     return (
-        <div>ImageViewer</div>
+        <div></div>
     )
 }
 
