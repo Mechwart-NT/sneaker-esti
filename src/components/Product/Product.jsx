@@ -1,15 +1,14 @@
 import ImageViewer from '../ImageViewer/ImageViewer'
 import minus from "../../assets/icon-minus.svg"
 import plus from "../../assets/icon-plus.svg"
-import { useContext } from 'react'
-import { CartContext } from '../../App'
+import { useCart } from '../../context/CartContextProvider'
 
 
 const Product = () => {
-    const ctx = useContext(CartContext)
+    const {setCart} = useCart()
 
     const addToCart = () => {
-        ctx.setCart(prev => [...prev, {name: "Fall Limited Edition Sneakers", price: 125}])
+        setCart(prev => [...prev, {name: "Fall Limited Edition Sneakers", price: 125}])
     }
 
     return (

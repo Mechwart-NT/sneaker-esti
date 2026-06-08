@@ -1,18 +1,15 @@
-import { createContext, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Product from './components/Product/Product'
+import CartContextProvider from './context/CartContextProvider'
 
-export const CartContext = createContext()
 
 const App = () => {
-  const [cart, setCart] = useState([])
-
   return (
     <main>
-      <CartContext.Provider value={{cart, setCart}}>
+      <CartContextProvider>
         <Navbar/>
         <Product/>
-      </CartContext.Provider>
+      </CartContextProvider>
     </main>
   )
 }

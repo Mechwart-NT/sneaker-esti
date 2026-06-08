@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { CartContext } from '../../App'
+import {useState } from 'react'
 import cartIcon from "../../assets/icon-cart.svg"
+import { useCart } from '../../context/CartContextProvider'
 const Navbar = () => {
-  const ctx = useContext(CartContext)
+  const {cart} = useCart()
   const [cartIsOpen, setCartIsOpen] = useState(false)
   return (
     <nav>
@@ -12,12 +12,12 @@ const Navbar = () => {
       <a>About</a>
       <a>Contact</a>
       <div className='cart'>
-        {ctx.cart.length > 0 && <span>{ctx.cart.length}</span>}
+        {cart.length > 0 && <span>{cart.length}</span>}
         <img onClick={()=>setCartIsOpen(prev => !prev)} src={cartIcon}/>
         {cartIsOpen && <div>
           <h2>Cart</h2>
           <ul>
-            {ctx.cart.map(element => <li>{element.name} - {element.price}$</li>)}
+            {cart.map(element => <li>{element.name} - {element.price}$</li>)}
           </ul>
         </div>}
       </div>
