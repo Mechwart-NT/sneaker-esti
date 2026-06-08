@@ -5,10 +5,10 @@ import { useCart } from '../../context/CartContextProvider'
 
 
 const Product = () => {
-    const {setCart} = useCart()
+    const {addItemToCart} = useCart()
 
     const addToCart = () => {
-        setCart(prev => [...prev, {name: "Fall Limited Edition Sneakers", price: 125}])
+        addItemToCart({name: "Fall Limited Edition Sneakers", price: 125})
     }
 
     return (
