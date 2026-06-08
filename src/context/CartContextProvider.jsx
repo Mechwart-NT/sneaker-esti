@@ -22,8 +22,14 @@ const CartContextProvider = ({children}) => {
     saveToLocalStorage(newCart)
   }
 
+  const deleteItemFromCart = (id) => {
+    let newCart = cart.filter((item) => item.id !== id)
+    setCart(newCart)
+    saveToLocalStorage(newCart)
+  }
+
   return (
-    <CartContext.Provider value={{cart, setCart, addItemToCart}}>
+    <CartContext.Provider value={{cart, setCart, addItemToCart, deleteItemFromCart}}>
         {children}
     </CartContext.Provider>
   )
